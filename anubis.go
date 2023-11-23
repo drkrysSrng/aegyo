@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"context"
 	"fmt"
 	"io"
 	"log"
 	"net"
+	"os"
 
 	"github.com/projectdiscovery/subfinder/v2/pkg/runner"
 )
@@ -56,9 +58,27 @@ func get_subdomains(domain string) {
 }
 
 func main() {
-	domain := "taekwondocyl.com"
-	example_ip := "217.76.130.206"
+
+	// Prompt the user to enter a domain
+	fmt.Println("Enter an IP to analyse: ")
+
+	// Read the input from the command line
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+
+	// Get the user input
+	domain := scanner.Text()
+
+	// Prompt the user to enter a domain
+	fmt.Println("Enter a domain to analyse: ")
+
+	scanner.Scan()
+
+	// Get the user input
+	example_ip := scanner.Text()
+
 	reverse_ip(example_ip)
+
 	get_subdomains(domain)
 	https_get(domain)
 	nuclei_get(domain)
