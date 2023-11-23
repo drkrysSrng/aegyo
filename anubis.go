@@ -56,7 +56,11 @@ func get_subdomains(domain string) {
 }
 
 func main() {
-	reverse_ip("85.91.64.77")
-	get_subdomains("galiciana.gal")
+	domain := "taekwondocyl.com"
+	example_ip := "217.76.130.206"
+	reverse_ip(example_ip)
+	get_subdomains(domain)
+	https_get(domain)
+	nuclei_get(domain)
 
 }
