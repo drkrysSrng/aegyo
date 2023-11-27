@@ -67,7 +67,7 @@ func main() {
 	scanner.Scan()
 
 	// Get the user input
-	domain := scanner.Text()
+	example_ip := scanner.Text()
 
 	// Prompt the user to enter a domain
 	fmt.Println("Enter a domain to analyse: ")
@@ -75,12 +75,14 @@ func main() {
 	scanner.Scan()
 
 	// Get the user input
-	example_ip := scanner.Text()
+	domain := scanner.Text()
 
+	fmt.Println("Example is", example_ip)
 	reverse_ip(example_ip)
+	check(example_ip)
 
 	get_subdomains(domain)
 	https_get(domain)
-	nuclei_get(domain)
+	nuclei_get(example_ip)
 
 }
