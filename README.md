@@ -27,6 +27,7 @@ go run range_get.go httpx_get.go  nuclei_get.go  anubis.go
 ## Full command
 * After installing the go package, the binary is in `~/go/bin`
 
-``````
+```
 ./subfinder -silent -d [url] | ./httpx | ./nuclei -t nuclei-templates/
+
 ```
